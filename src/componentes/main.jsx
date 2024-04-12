@@ -1,51 +1,57 @@
-import react from "react";
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import Header from "./header";
+import AccionCard from "./acciones";
+import Footer from "./footer";
 
 export default function Main() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}> 
-          <Text style={styles.welcomeMessage}> Buenos dias </Text>
-          <View style={styles.saldoContenedor}>
-              <Text style={styles.saldoMessage}>
-                Usuarios operando
-              </Text>
-              <Text style={styles.saldoValue}>
-                1.200.000.000
-              </Text>
-          </View>
-        </View>
-        <StatusBar style="auto" />
+
+  return (
+    <View style={styles.container}>
+      <Header />
+      <View style={styles.menuContainer}>
+        <AccionCard/>
       </View>
-    );
+      <Footer  />
+    </View>
+  );
 }
-  
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#F0F6F6',
-    },
-    header:{
-        width: "100%",
-        height: 200,
-        backgroundColor: "#4BAF8B",
-        borderBottomRightRadius: 160
-    },
-    welcomeMessage: {
-        fontSize: 22,
-        marginTop: 46,
-        marginLeft: 10
-    },
-    saldoMessage:{
-        fontSize: 15,
-        marginTop: 25,
-        marginLeft: 15
-    },
-    saldoValue: {
-        fontSize: 30,
-        fontWeight: "bold",
-        marginLeft: 15
-    }
-  });
-  
+  container: {
+    flex: 1, 
+  },
+  menuContainer: {
+    backgroundColor: '#284545',
+    flex: 1, 
+  },
+  card: {
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 10,
+    marginHorizontal: 20,
+    marginVertical: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  symbol: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  companyName: {
+    fontSize: 16,
+    color: '#555',
+    marginBottom: 10,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  infoText: {
+    fontSize: 14,
+  },
+});
