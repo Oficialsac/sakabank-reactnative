@@ -1,29 +1,28 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import Header from "./header";
-import AccionCard from "./acciones";
-import Footer from "./footer";
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import DetalleAcciones from './detalleAcciones';
+import Footer from './footer';
+import Header from './header';
 
 export default function Main() {
-
   return (
     <View style={styles.container}>
       <Header />
       <View style={styles.menuContainer}>
-        <AccionCard/>
+        <DetalleAcciones />
       </View>
-      <Footer  />
+      <Footer />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
   },
   menuContainer: {
     backgroundColor: '#284545',
-    flex: 1, 
+    flex: 1,
   },
   card: {
     backgroundColor: '#fff',
